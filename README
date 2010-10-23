@@ -1,1 +1,7 @@
 Mojava is More Java. All useful tidbits that make your life easier.
+
+- The smallest things go into the base module.
+- Larger convenience libraries go into their own submodules
+- Try and keep dependencies to a minimum
+- Everything must build and test with Maven
+
