@@ -16,13 +16,17 @@ import java.util.Map;
  */
 public class Counter<T> extends HashMap<T, Long> {
   public long increment(T t) {
+    return increment(t, 1L);
+  }
+
+  public long increment(T t, long inc) {
     Long i = get(t);
     if (i == null) {
-      put(t, 1L);
-      return 1;
+      put(t, inc);
+      return inc;
     } else {
-      put(t, i + 1);
-      return i + 1;
+      put(t, i + inc);
+      return i + inc;
     }
   }
 
