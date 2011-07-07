@@ -193,6 +193,13 @@ public class Abbrev {
     return b;
   }
 
+  public static long n(Long b) {
+    if (b == null) {
+      return 0;
+    }
+    return b;
+  }
+
   public static int n(Integer b) {
     if (b == null) {
       return 0;
