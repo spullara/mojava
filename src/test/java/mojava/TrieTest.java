@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * TODO: Edit this
@@ -23,6 +24,8 @@ public class TrieTest {
     trie.put(Arrays.asList("sam", "pullara3", "test"), "sam pullara3 test");
     trie.put(Arrays.asList("anna", "pullara3", "test"), "anna pullara3 test");
     assertEquals("sam pullara test", trie.get(Arrays.asList("sam", "pullara", "test")));
-    assertEquals(Arrays.asList("sam pullara", "sam pullara test", "sam pullara test2"), trie.getAll(Arrays.asList("sam", "pullara")));
+    assertEquals(Arrays.asList("sam pullara", "sam pullara test", "sam pullara test2"), trie.getAll(
+            Arrays.asList("sam", "pullara")));
+    assertTrue(trie.getAll(Arrays.asList("sam", "pullara", "fred")).isEmpty());
   }
 }

@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.collect.Lists;
+
+import static com.google.common.collect.Lists.newArrayList;
+
 /**
  * Store values using a list of keys. Look them up by a list of keys or grab all below a certain prefix key.
  * <p/>
@@ -45,7 +49,10 @@ public class Trie<K, V> {
         values.addAll(entry.getValue().getAll(list));
       }
     } else {
-      return root.get(list.get(0)).getAll(list.subList(1, list.size()));
+      Trie<K, V> kvTrie = root.get(list.get(0));
+      if (kvTrie != null) {
+        return kvTrie.getAll(list.subList(1, list.size()));
+      }
     }
     return values;
   }
